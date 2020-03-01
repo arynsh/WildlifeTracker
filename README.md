@@ -11,15 +11,19 @@
 * [License](#license)
 
 ### Description
-This is a app that allows users to create logs of wildlife sightings (species, time, date, description, image) and add those logs to a map of all wildlife sightings in their area. The user will be able to choose to view either all logs near their gps location or input an address. 
+This is a app that allows users to create logs of wildlife sightings (species, time, date, description, image) and add those logs to a map of all wildlife sightings in their area. The user will be able to choose to view either all logs near their gps location or input an address. The MVP (minimum viable product) consists of the previous mentioned functionality. Further functionality will consist of
+ 1) being able to filter results (on map) based on species, rating, date, and species+location 
+ 2) creating an API for other developers to use the data 
+ 3) adding an upvote/downvote to logs 
+ 4) adding a rating system for species(endangered, dangerous, or hurt animals). 
+ 5) user authentication will be implemented to allow users to create accounts/sign in/sign out and view their log history.
 
 ### Specifications
 | Spec | Input | Output |
 | :-------------     | :------------ | :------------- |
-| Homepage | User accesses:http://localhost:8000/| Homepage w/age verification |
-| **User clicks 'under21' and doesn't access Kegs| http://localhost:8080/#/UnderAge | User is unable to see Kegs |
-| **User clicks 'over21' and accesses Kegs | http://localhost:8080/#/KegList |  User is redirected to list of Kegs |
-| **User clicks 'decrease' button for individual keg and avail. pints decreases by 1 pint| http://localhost:8080/#/KegList |  Number of pints avail. decreases by the number of clicks |
+| Homepage | User accesses:http://localhost:8000/| Homepage w/map displaying their gps location |
+| **User clicks create new sighting| http://localhost:8080/#/NewLog | User can fill out a form on the page |
+| **User submits form for new sighting | http://localhost:8080/#/NewLog | Form is submitted into database and page shows "thank you for creating a new submission" |
 
 ### Component Structure
 ```
@@ -27,27 +31,24 @@ App (state -> NewKegControl -> NewKegForm)
 └── Header          
 └── Switch
     └── Home
-    └── Under21
     └── About Us
-    └── Visit
-    └── Careers
-    └── Keg List
-    |     └── Keg (state)
-    └── NewKegControl (state)
+    └── Log List
+    |     └── Log (state)
+    └── NewLogControl (state)
     |    └── Confirmation Question    
-    |    └── NewKegForm
+    |    └── NewLogForm
     └── Error 404
 ```
 
 ### Instructions
 
-1. Clone this repository: https://github.com/arynsh/react-seattlebrewery
+1. Clone this repository: https://github.com/arynsh/react-wildlife-tracker
 ```
-$ git clone https://github.com/arynsh/react-seattlebrewery
+$ git clone https://github.com/arynsh/react-wildlife-tracker
 ```
 2. Navigate into the repository
 ```
-$ cd react-seattlebrewery
+$ cd react-wildlife-tracker
 ```
 3. In the command line, type in "npm install" or "npm i" then "npm run start".
 ```
