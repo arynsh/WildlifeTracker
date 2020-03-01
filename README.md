@@ -27,7 +27,7 @@ This is a app that allows users to create logs of wildlife sightings (species, t
 
 ### Component Structure
 ```
-App (state -> NewKegControl -> NewKegForm)
+App (state -> NewLogControl -> NewLogForm)
 └── Header          
 └── Switch
     └── Home
