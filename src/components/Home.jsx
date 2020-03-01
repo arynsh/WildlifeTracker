@@ -37,6 +37,7 @@ var linkStyle= {
   display: 'inline-block'
 }
 
+
 function Home() {
     return (
       <div style={homeStyling}>
